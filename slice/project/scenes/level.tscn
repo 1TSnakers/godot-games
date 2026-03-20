@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bjtm03p4owlw5"]
+
+[ext_resource type="Script" uid="uid://bqwcbanno2r58" path="res://scripts/level.gd" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dtlxvhf83bilo" path="res://scenes/level_boxes.tscn" id="3_mx8sn"]
+[ext_resource type="Material" uid="uid://wpe28xirfgjh" path="res://shaders/cubes.tres" id="3_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bgv6v1ggse3fe" path="res://scenes/player.tscn" id="3_w8frs"]
+
+[node name="Level" type="Node3D" unique_id=532269833 node_paths=PackedStringArray("csg_root")]
+script = ExtResource("1_w7c3h")
+csg_root = NodePath("CSGCombiner3D")
+
+[node name="player" parent="." unique_id=1387701636 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0.5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=655400087]
+material_override = ExtResource("3_ppgk2")
+operation = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=534115849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.5, 0.5)
+size = Vector3(5, 3, 0.01)
+
+[node name="level boxes" parent="CSGCombiner3D" unique_id=129813943 instance=ExtResource("3_mx8sn")]
+
+[node name="level boxes" parent="." unique_id=1011771913 instance=ExtResource("3_mx8sn")]
+visible = false
+material_override = ExtResource("3_ppgk2")
+operation = 0

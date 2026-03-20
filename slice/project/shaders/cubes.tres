@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wpe28xirfgjh"]
+
+[ext_resource type="Shader" uid="uid://dlb0ek6tt2nwf" path="res://shaders/cubes.gdshader" id="1_5xhwi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5xhwi")
+shader_parameter/seed = 0.5
